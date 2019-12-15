@@ -9,7 +9,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 		<http:listener-connection host="0.0.0.0" port="8089" />
 	</http:listener-config>
 	<flow name="on-prem-testFlow" doc:id="7cf1274c-58c4-4028-b608-e0f99ff66525" >
-		<http:listener doc:id="bbfee02a-6e87-476b-a8e6-e1eb41140548" doc:name="" config-ref="HTTP_Listener_config" path="/onpremtest"/>
+		<http:listener doc:id="bbfee02a-6e87-476b-a8e6-e1eb41140548" doc:name="Listener" config-ref="HTTP_Listener_config" path="/onpremtest"/>
 		<logger level="INFO" doc:name="Logger" doc:id="30a0d0b7-bb76-4314-a898-12a0a45a40c1" message="&gt;&gt;&gt;&gt;&gt;&gt;start&lt;&lt;&lt;&lt;&lt;&lt;&lt;"/>
 		<set-payload value="Hi!This is deep" doc:name="Set Payload" doc:id="7d7d99fd-646e-4dc2-a757-3ac8c2505405" />
 	</flow>
