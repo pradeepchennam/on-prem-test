@@ -10,11 +10,6 @@
 
 	<name>on-prem-test</name>
 	
-	
-	
-	
-	
-
     <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -25,12 +20,27 @@
 
 	<build>
 		<plugins>
+		<plugin>
+  <groupId>org.mule.tools.maven</groupId>
+  <artifactId>mule-maven-plugin</artifactId>
+  <version>2.3.2</version>
+  <extensions>true</extensions>
+</plugin>
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
+				<armDeployment>
+          <uri>https://anypoint.mulesoft.com</uri>
+          <target>sample-ibx-server</target>
+          <targetType>server</targetType>
+          <username>pradeepchennam01</username>
+          <password>Pr@deep1</password>
+          <environment>sandbox</environment>
+          
+      </armDeployment>
 				</configuration>
 			</plugin>
 		</plugins>
