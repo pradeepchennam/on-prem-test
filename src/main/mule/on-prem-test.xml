@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="832e04dd-6af9-4420-8cb3-2af23f3a5149" >
+		<http:listener-connection host="0.0.0.0" port="8087" />
+	</http:listener-config>
+	<flow name="on-prem-testFlow" doc:id="7cf1274c-58c4-4028-b608-e0f99ff66525" >
+		<http:listener doc:name="Listener" doc:id="47abf129-68b5-4982-bc61-0c04ff1c2cbd" config-ref="HTTP_Listener_config" path="/onprem"/>
+		<logger level="INFO" doc:name="Logger" doc:id="30a0d0b7-bb76-4314-a898-12a0a45a40c1" message="&gt;&gt;&gt;&gt;&gt;&gt;start&lt;&lt;&lt;&lt;&lt;&lt;&lt;"/>
+		<set-payload value="Hi!This is deep" doc:name="Set Payload" doc:id="7d7d99fd-646e-4dc2-a757-3ac8c2505405" />
+	</flow>
+</mule>
