@@ -19,6 +19,13 @@
 
 	<build>
 		<plugins>
+		<plugin>
+			<groupId>org.mule.tools.maven</groupId>
+			  <artifactId>mule-app-maven-plugin</artifactId>
+			  <version>1.2</version>
+			  <extensions>true</extensions>
+		</plugin>
+		
 			<plugin>
   <groupId>org.mule.tools.maven</groupId>
   <artifactId>mule-maven-plugin</artifactId>
@@ -40,6 +47,15 @@
         <key>value</key>
       </properties> -->
   </configuration>
+  <executions>
+  <execution>
+  <id>deploy</id>
+  <phase>deploy</phase>
+  <goals>
+     <goal>deploy</goal>
+  </goals>
+  </execution>
+  </executions>
      </plugin>
           <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
