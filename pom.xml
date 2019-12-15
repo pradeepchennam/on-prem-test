@@ -35,7 +35,6 @@
       <environment>sandbox</environment>
       <applicationName>on-prem-test-api</applicationName>
       <redeploy>true</redeploy>
-      
       <!-- <properties>
         <key>value</key>
       </properties> -->
