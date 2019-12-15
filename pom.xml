@@ -1,18 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.mycompany</groupId>
 	<artifactId>on-prem-test</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    
-    
-    
-    <!-- <packaging>mule-application</packaging> -->
+    <packaging>mule-application</packaging>
 
-	<name>mule on-prem-test application</name>
-	
+	<name>on-prem-test-api</name>
+
     <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -23,42 +19,52 @@
 
 	<build>
 		<plugins>
-		<plugin>
+			<plugin>
   <groupId>org.mule.tools.maven</groupId>
   <artifactId>mule-maven-plugin</artifactId>
-  <version>2.3.2</version>
+  <version>3.3.2</version>
   <extensions>true</extensions>
+  <configuration>
+    <armDeployment>
+      <muleVersion>4.1.3</muleVersion>
+      <uri>https://anypoint.mulesoft.com</uri>
+      <target>sample-ibx-server</target>
+      <targetType>server</targetType>
+      <username>pradeepchennam01</username>
+      <password>Pr@deep1</password>
+      <environment>sandbox</environment>
+      <applicationName>on-prem-test-api</applicationName>
+      <properties>
+        <key>value</key>
+      </properties>
+    </armDeployment>
+  </configuration>
+     </plugin>
+          <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-scm-plugin</artifactId>
+				<version>1.9.5</version>
+			</plugin>
 
-			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.8.2</version>
 				<configuration>
-				<armDeployment>
-          <uri>https://anypoint.mulesoft.com</uri>
-          <target>sample-ibx-server</target>
-          <targetType>server</targetType>
-          <username>pradeepchennam01</username>
-          <password>Pr@deep1</password>
-          <environment>sandbox</environment>
-          
-      </armDeployment>
+					<skip>${skip.artifactory}</skip>
 				</configuration>
-		</plugin>	
+			</plugin>
 		</plugins>
 	</build>
 
 	<dependencies>
-        <dependency>
+		<dependency>
             <groupId>org.mule.connectors</groupId>
             <artifactId>mule-http-connector</artifactId>
-            <version>1.3.1</version>
+            <version>1.2.0</version>
             <classifier>mule-plugin</classifier>
         </dependency>
-        <dependency>
-            <groupId>org.mule.connectors</groupId>
-            <artifactId>mule-sockets-connector</artifactId>
-            <version>1.1.1</version>
-            <classifier>mule-plugin</classifier>
-        </dependency>
-	</dependencies>
+    </dependencies>
 
 	<repositories>
           <repository>
@@ -84,6 +90,13 @@
                 <enabled>false</enabled>
             </snapshots>
         </pluginRepository>
+        
+  <pluginRepository>
+    <id>mule-public</id>
+    <url>http://localhost:8080/</url>
+  </pluginRepository>
+
     </pluginRepositories>
+    
 
 </project>

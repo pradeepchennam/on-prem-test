@@ -1,3 +1,45 @@
 {
-  "minMuleVersion": "4.1.3"
+
+"configs": [
+
+"on-prem-test.xml"
+
+],
+
+"secureProperties": [],
+
+"redeploymentEnabled": true,
+
+"name": "on-prem-test",
+
+"minMuleVersion": "4.1.3",
+
+"requiredProduct": "MULE_EE",
+
+"classLoaderModelLoaderDescriptor": {
+
+"id": "mule",
+
+"attributes": {
+
+"exportedResources": [],
+
+"exportedPackages":[
+
+
+
+]
+
+}
+
+},
+
+"bundleDescriptorLoader": {
+
+"id": "mule",
+
+"attributes": {}
+
+}
+
 }
