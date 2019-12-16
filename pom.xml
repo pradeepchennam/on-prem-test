@@ -105,10 +105,13 @@
             <version>1.2.0</version>
             <classifier>mule-plugin</classifier>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.mule.modules/mule-module-http -->
+
+        
     </dependencies>
 
-	<repositories>
-          <repository>
+	 <repositories>
+          <!--<repository>
             <id>anypoint-exchange</id>
             <name>Anypoint Exchange</name>
             <url>https://maven.anypoint.mulesoft.com/api/v1/maven</url>
@@ -119,7 +122,7 @@
             <name>MuleSoft Releases Repository</name>
             <url>https://repository.mulesoft.org/releases/</url>
             <layout>default</layout>
-        </repository>
+        </repository> -->
         <repository>
             <id>mule-releases</id>
             <name>Mule Releases</name>
