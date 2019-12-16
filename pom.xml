@@ -11,7 +11,7 @@
        <repository>
          <id>internal.repo</id>
          <name>Internal repo</name>
-         <url>C:\Users\prade\new-in</url>
+         <url>C:\mule-ee-distribution-standalone-4.2.2\mule-enterprise-standalone-4.2.2\apps</url>
        </repository>
    </distributionManagement>
 
