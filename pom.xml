@@ -6,6 +6,14 @@
 	<artifactId>on-prem-test</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>mule-application</packaging>
+    
+    <distributionManagement>
+       <repository>
+         <id>internal.repo</id>
+         <name>Internal repo</name>
+         <url>C:\Users\prade\new-in</url>
+       </repository>
+   </distributionManagement>
 
 	<name>on-prem-test-api</name>
 
@@ -105,6 +113,12 @@
             <version>1.2.0</version>
             <classifier>mule-plugin</classifier>
         </dependency>
+        <!-- <dependency>
+            <groupId>com.mulesoft.muleesb</groupId>
+                  <artifactId>mule-core-ee</artifactId>
+                  <version>${mule.version}</version>
+                  <scope>provided</scope>
+            </dependency> -->
         <!-- https://mvnrepository.com/artifact/org.mule.modules/mule-module-http -->
 
         
@@ -127,6 +141,12 @@
             <id>mule-releases</id>
             <name>Mule Releases</name>
             <url>https://repository.mulesoft.org/nexus/content/repositories/public</url>
+            <layout>default</layout>
+        </repository>
+        <repository>
+            <id>Central</id>
+            <name>Central</name>
+            <url>http://repo1.maven.org/maven2/</url>
             <layout>default</layout>
         </repository>
     </repositories>
