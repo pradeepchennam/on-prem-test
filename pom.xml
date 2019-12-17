@@ -30,9 +30,9 @@
 				      <uri>https://anypoint.mulesoft.com</uri>
 				      <target>sample-ibx-server</target>
 				      <targetType>server</targetType>
-				      <username>${anypoint.username}</username>
-				      <password>${anypoint.password}</password>
-				      <environment>${anypoint.environment}</environment>
+				      <username>pradeepchennam01</username>
+				      <password>Pr@deep1</password>
+				      <environment>sandbox</environment>
 				      <applicationName>on-prem-test-api</applicationName>
 				      <redeploy>true</redeploy>
       
@@ -128,11 +128,11 @@
             <url>https://repository.mulesoft.org/releases/</url>
             <layout>default</layout>
         </repository>
-        <!-- <repository>
+        <repository>
             <id>mulesoft-snapshots</id>
             <name>MuleSoft Snapshots</name>
             <url>http://repository.mulesoft.org/snapshots/</url>
-        </repository> -->
+        </repository>
     </repositories>
     
     <pluginRepositories>
